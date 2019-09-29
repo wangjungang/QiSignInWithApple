@@ -56,6 +56,9 @@
                         errorMsg = @"未发现苹果授权凭证";
                         // 可以引导用户重新登录
                         break;
+                    case ASAuthorizationAppleIDProviderCredentialTransferred:
+                        errorMsg = @"授权失败";
+                        break;
                 }
                 dispatch_async(dispatch_get_main_queue(), ^{
                     NSLog(@"SignInWithApple授权状态变化情况");
